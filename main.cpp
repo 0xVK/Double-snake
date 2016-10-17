@@ -9,8 +9,8 @@ using namespace std;
 #define CLS system ("cls")
 #define VERSION ("1.1") 
 #define AUTHOR ("Kucher Vitaliy")
-#define ROB_WIN   cout << endl << pl1 << " победил!" << endl << endl; system ("pause"); 
-#define POUL_WIN  cout << endl << pl2 << " победил!" << endl << endl; system ("pause"); 
+#define ROB_WIN   cout << endl << pl1 << " win!" << endl << endl; system ("pause"); 
+#define POUL_WIN  cout << endl << pl2 << " win!" << endl << endl; system ("pause"); 
 
 const int W = 28, H = 15, SleepTime = 130;
 int w = 0, time_ = 59;
@@ -26,7 +26,7 @@ int Time_Out ()
 			w = 0;
 		}
 
-	cout <<"\t Таймер: ["<< time_ << ']'<< endl;
+	cout <<"\t timer: ["<< time_ << ']'<< endl;
 
 	return time_ + 1;
 }
@@ -90,7 +90,7 @@ void Game2 (string pl1, string pl2)
 		Rob.Next_Step(W,H);
 
 		if (Rob.snake_size - 3 != 4)
-			cout << "Еда: [" << Rob.snake_size - 3 << "/4] ";
+			cout << "Г…Г¤Г : [" << Rob.snake_size - 3 << "/4] ";
 		else { ROB_WIN }
 
 		if (!Time_Out()) { ROB_WIN }
@@ -103,7 +103,7 @@ void Game2 (string pl1, string pl2)
 string Set_Login1 ()
 {
 	string log;
-	cout << "Введите имя первого игрока:" << endl << "\t\t $$$>  ";
+	cout << "Enter first player name:" << endl << "\t\t $$$>  ";
 	cin >> log;
 	return log;
 }
@@ -111,7 +111,7 @@ string Set_Login1 ()
 string Set_Login2 ()
 {
 	string log;
-	cout << "Введите имя второго игрока:" << endl << "\t\t @@@>  ";
+	cout << "Enter second player name:" << endl << "\t\t @@@>  ";
 	cin >> log;
 	return log;
 }
@@ -119,12 +119,12 @@ string Set_Login2 ()
 void How_To_Play ()
 {
 	CLS;
-	cout << "Правила игры" << endl;
-	cout << "Перед началом игры Вам нужно ввести имя первого и второго игрока"<< endl << "(пробелы не допускаются)" << endl;
-	cout << "После ввода имён игра начинается, и задача первого игрока  $$$> "<< endl << "собрать 5 яблок за одну минуту," << endl;
-	cout << "А задача второго игрока  @@@> его поймать. "<< endl << "Игра продолжается пока первый игрок не будет пойман, или пока не соберёт 5 яблок"  << endl;
+	cout << "Rules" << endl;
+	cout << "At first, You should type first and second player`s names"<< endl << "(without spaces)" << endl;
+	cout << "After it, game will be start, and task first player $$$> "<< endl << "is eat 5 apples, " << endl;
+	cout << "And @@@> task is catch first player"<< endl;
 
-	cout << "Чтобы начать игру нажмите любою клавишу";
+	cout << "Press any key to continue...";
 	_getch();
 
 	string pl_1, pl_2;
@@ -135,12 +135,12 @@ void How_To_Play ()
 void About ()
 {
 	CLS;
-	cout << "О игре" << endl<< endl;
-	cout << "\tНазвание: Double Snake" << endl;	
-	cout << "\tВерсия: " << VERSION << endl;
-	cout << "\tАвтор: " << AUTHOR << endl << endl;
+	cout << "About..." << endl<< endl;
+	cout << "\tName: Double Snake" << endl;	
+	cout << "\tVersion: " << VERSION << endl;
+	cout << "\tAuthor: " << AUTHOR << endl << endl;
 
-	cout << "Чтобы начать игру нажмите любою клавишу";
+	cout << "Press any key to begin";
 	_getch();
 
 	string pl_1, pl_2;
@@ -154,7 +154,7 @@ int main ()
 	char c;
 	string pl_1, pl_2;
 	system ("color 9");
-	cout << "Меню:\n \t1.Играть\n \t2.Как играть\n \t3.О игре\n \t4.Выйти\n\nОжидание... "; 
+	cout << "Menu:\n \t1.Play\n \t2.How to play\n \t3.About...\n \t4.Quit\n\nPress any key... "; 
 	c = _getch();
 
 	switch (c)
@@ -163,7 +163,7 @@ int main ()
 	case '2': How_To_Play(); break;
 	case '3': About(); break;
 	case '4': exit(0); break;
-	default: cout << endl << "Неправильный выбор!" << endl; break;
+	default: cout << endl << "Invalid choise" << endl; break;
 	}
 
 	system ("pause");
