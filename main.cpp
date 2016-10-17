@@ -7,7 +7,7 @@
 using namespace std;
 
 #define CLS system ("cls")
-#define VERSION ("1.1") 
+#define VERSION ("1.2") 
 #define AUTHOR ("Kucher Vitaliy")
 #define ROB_WIN   cout << endl << pl1 << " win!" << endl << endl; system ("pause"); 
 #define POUL_WIN  cout << endl << pl2 << " win!" << endl << endl; system ("pause"); 
@@ -90,7 +90,7 @@ void Game2 (string pl1, string pl2)
 		Rob.Next_Step(W,H);
 
 		if (Rob.snake_size - 3 != 4)
-			cout << "Åäà: [" << Rob.snake_size - 3 << "/4] ";
+			cout << "Apples: [" << Rob.snake_size - 3 << "/4] ";
 		else { ROB_WIN }
 
 		if (!Time_Out()) { ROB_WIN }
@@ -150,7 +150,7 @@ void About ()
 
 int main ()
 {
-	setlocale( LC_ALL,"Russian" );
+
 	char c;
 	string pl_1, pl_2;
 	system ("color 9");
